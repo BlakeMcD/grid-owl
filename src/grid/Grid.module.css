@@ -1,7 +1,11 @@
 .root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridContainer {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }

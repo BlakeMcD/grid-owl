@@ -21,9 +21,11 @@ function Grid() {
     }
 
     return (
-        <div className={styles.root} style={{ width: `${(cellSize * columns) + (cellSize / 2)}px` }} >
-            {cellsArray.length ? cellsArray : null}
-        </ div>
+        <div className={styles.root}>
+            <div className={styles.gridContainer} style={{ width: `${(cellSize * columns) + (cellSize / 2)}px` }} >
+                {cellsArray.length ? cellsArray : null}
+            </ div>
+        </div>
     )
 }
 
