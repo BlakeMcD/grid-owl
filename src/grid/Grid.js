@@ -13,6 +13,7 @@ function Grid() {
         for (let column = 0; column < columns; column++) {
             cellsArray.push(
                 <Cell
+                    cellSize={cellSize}
                     x={row * cellSize}
                     y={column * cellSize}
                 />)
@@ -20,9 +21,9 @@ function Grid() {
     }
 
     return (
-        <div>
+        <div className={styles.root} style={{ width: `${(cellSize * columns) + (cellSize / 2)}px` }} >
             {cellsArray.length ? cellsArray : null}
-        </div>
+        </ div>
     )
 }
 
