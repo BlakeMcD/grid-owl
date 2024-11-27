@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Cell from './cell/Cell';
+import Owl from './owl/Owl';
 import styles from './Grid.module.css';
 
 function Grid() {
@@ -24,6 +25,7 @@ function Grid() {
         <div className={styles.root}>
             <div className={styles.gridContainer} style={{ width: `${(cellSize * columns) + (cellSize / 2)}px` }} >
                 {cellComponents.length ? cellComponents : null}
+                <Owl />
             </ div>
         </div>
     )
