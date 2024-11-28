@@ -8,7 +8,7 @@
   height: 48px;
   z-index: 1;
 }
-.root.right {
+.root.eyesRight {
   transform: translate(20px, -12px);
 }
 .eye {
@@ -29,4 +29,16 @@
   background-color: black;
   border-radius: 50%;
   position: absolute;
+}
+.pupil.pupilsRight {
+  transform: translate(4px, 0px);
+}
+.pupil.pupilsLeft {
+  transform: translate(-4px, 0px);
+}
+.pupil.pupilsUp {
+  transform: translate(0px, -4px);
+}
+.pupil.pupilsDown {
+  transform: translate(0px, 4px);
 }
