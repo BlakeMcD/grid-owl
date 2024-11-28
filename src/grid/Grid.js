@@ -6,7 +6,7 @@ import styles from './Grid.module.css';
 function Grid() {
 
     const [columns, rows] = [5, 5];
-    const cellSize = 64;
+    const cellSize = 96;
     const [position, setPosition] = useState({ x: 3, y: 3 })
 
     useEffect(() => {

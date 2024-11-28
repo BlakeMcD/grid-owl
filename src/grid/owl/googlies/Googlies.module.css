@@ -1,0 +1,28 @@
+.root {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-5px, -12px);
+  width: 48px;
+  height: 48px;
+}
+.eye {
+  width: 50%;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  position: relative;
+}
+.pupil {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
