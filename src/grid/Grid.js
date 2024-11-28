@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Cell from './cell/Cell';
+import CellRenderer from './cellRenderer/cellRenderer';
 import Owl from './owl/Owl';
 import styles from './Grid.module.css';
 
@@ -7,8 +7,7 @@ function Grid() {
 
     const [columns, rows] = [5, 5];
     const cellSize = 64;
-    const [position, setPosition] = useState({ x: 3 * cellSize, y: 3 * cellSize })
-    const cellComponents = []
+    const [position, setPosition] = useState({ x: 3, y: 3 })
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -18,19 +17,19 @@ function Grid() {
                 switch (event.key) {
                     case "ArrowUp":
                     case "w":
-                        y = Math.max(0, y - cellSize);
+                        y = Math.max(0, y - 1);
                         break;
                     case "ArrowDown":
                     case "s":
-                        y = Math.min((rows - 1) * cellSize, y + cellSize);
+                        y = Math.min((rows - 1), y + 1);
                         break;
                     case "ArrowLeft":
                     case "a":
-                        x = Math.max(0, x - cellSize);
+                        x = Math.max(0, x - 1);
                         break;
                     case "ArrowRight":
                     case "d":
-                        x = Math.min((columns - 1) * cellSize, x + cellSize);
+                        x = Math.min((columns - 1), x + 1);
                         break;
                     default:
                         return prevPosition;
@@ -46,22 +45,11 @@ function Grid() {
         };
     }, []);
 
-    for (let row = 0; row < rows; row++) {
-        for (let column = 0; column < columns; column++) {
-            cellComponents.push(
-                <Cell
-                    cellSize={cellSize}
-                    x={row * cellSize}
-                    y={column * cellSize}
-                />)
-        }
-    }
-
     return (
         <div className={styles.root}>
-            <div className={styles.gridContainer} style={{ width: `${(cellSize * columns) + (cellSize / 2)}px` }} >
-                {cellComponents.length ? cellComponents : null}
-                <Owl position={position} offset={cellSize / 2} />
+            <div className={styles.gridContainer} style={{ width: `${(cellSize * columns) + (cellSize / 4)}px` }} >
+                <CellRenderer columns={columns} rows={rows} cellSize={cellSize} />
+                <Owl position={position} cellSize={cellSize} offset={2} />
             </ div>
         </div>
     )
