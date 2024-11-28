@@ -4,7 +4,9 @@ import styles from './Owl.module.css';
 function Owl({ position, offset }) {
     const { x, y } = position;
     return (
-        <div className={styles.root} style={{ left: `${x + offset}px`, top: `${y + offset}px` }}>Owl</div>
+        <div className={styles.root} style={{ left: `${x}px`, top: `${y}px` }}>
+            <img src={'./owl.png'} alt='Bellroy Owl' />
+        </div>
     )
 }
 
