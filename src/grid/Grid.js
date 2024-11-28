@@ -18,19 +18,19 @@ function Grid() {
                 switch (event.key) {
                     case "ArrowUp":
                     case "w":
-                        y = Math.max(0, y - (1 * cellSize));
+                        y = Math.max(0, y - cellSize);
                         break;
                     case "ArrowDown":
                     case "s":
-                        y = Math.min((rows - 1) * cellSize, y + (1 * cellSize));
+                        y = Math.min((rows - 1) * cellSize, y + cellSize);
                         break;
                     case "ArrowLeft":
                     case "a":
-                        x = Math.max(0, x - (1 * cellSize));
+                        x = Math.max(0, x - cellSize);
                         break;
                     case "ArrowRight":
                     case "d":
-                        x = Math.min((columns - 1) * cellSize, x + (1 * cellSize));
+                        x = Math.min((columns - 1) * cellSize, x + cellSize);
                         break;
                     default:
                         return prevPosition;
