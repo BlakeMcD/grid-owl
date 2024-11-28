@@ -7,35 +7,43 @@ function Grid() {
 
     const [columns, rows] = [5, 5];
     const cellSize = 96;
-    const [position, setPosition] = useState({ x: 3, y: 3 })
+    const [position, setPosition] = useState({ x: 3, y: 3, direction: 'neutral', facing: 'right' })
 
     useEffect(() => {
         const handleKeyDown = (event) => {
             setPosition((prevPosition) => {
-                let { x, y } = prevPosition;
+                let { x, y, facing } = prevPosition;
+                let newDirection = 'neutral';
+                let newFacing = facing;
 
                 switch (event.key) {
                     case "ArrowUp":
                     case "w":
                         y = Math.max(0, y - 1);
+                        newDirection = 'up';
                         break;
                     case "ArrowDown":
                     case "s":
                         y = Math.min((rows - 1), y + 1);
+                        newDirection = 'down';
                         break;
                     case "ArrowLeft":
                     case "a":
                         x = Math.max(0, x - 1);
+                        newDirection = 'left';
+                        newFacing = 'left';
                         break;
                     case "ArrowRight":
                     case "d":
                         x = Math.min((columns - 1), x + 1);
+                        newDirection = 'right';
+                        newFacing = 'right';
                         break;
                     default:
                         return prevPosition;
                 }
 
-                return { x, y };
+                return { x, y, direction: newDirection, facing: newFacing };
             });
         };
 
@@ -44,6 +52,8 @@ function Grid() {
             window.removeEventListener("keydown", handleKeyDown);
         };
     }, []);
+
+    console.log("position:", position)
 
     return (
         <div className={styles.root}>

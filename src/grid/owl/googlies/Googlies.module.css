@@ -6,6 +6,10 @@
   transform: translate(-5px, -12px);
   width: 48px;
   height: 48px;
+  z-index: 1;
+}
+.root.right {
+  transform: translate(20px, -12px);
 }
 .eye {
   width: 50%;
