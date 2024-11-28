@@ -14,14 +14,14 @@
 .eye {
   width: 50%;
   aspect-ratio: 1;
-  background-color: white;
+  background-color: #e15a1d;
   color: #404042;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-  border: 2px solid #404042;
+  border: 3px solid #404042;
   position: relative;
 }
 .pupil {

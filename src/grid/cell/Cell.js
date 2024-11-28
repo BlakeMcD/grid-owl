@@ -3,11 +3,10 @@ import styles from './Cell.module.css';
 
 function Cell(props) {
 
-    const { cellSize } = props;
+    const { cellSize, cellMargin } = props;
     return (
-        <span className={styles.root} style={{ width: `${cellSize}px`, height: `${cellSize}px` }}>
-            Cell
-        </span>
+        <div className={styles.root} style={{ width: `${cellSize}px`, height: `${cellSize}px`, margin: `${cellMargin}px` }}>
+        </div>
     );
 }
 

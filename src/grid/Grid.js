@@ -6,7 +6,7 @@ import styles from './Grid.module.css';
 function Grid() {
 
     const [columns, rows] = [5, 5];
-    const cellSize = 96;
+    const [cellSize, cellMargin] = [96, 6];
     const [position, setPosition] = useState({ x: 2, y: 2, direction: 'neutral', facing: 'right' })
 
     useEffect(() => {
@@ -57,9 +57,9 @@ function Grid() {
 
     return (
         <div className={styles.root}>
-            <div className={styles.gridContainer} style={{ width: `${(cellSize * columns) + (cellSize / 4)}px` }} >
-                <CellRenderer columns={columns} rows={rows} cellSize={cellSize} />
-                <Owl position={position} cellSize={cellSize} offset={2} />
+            <div className={styles.gridContainer} >
+                <CellRenderer columns={columns} rows={rows} cellSize={cellSize} cellMargin={cellMargin} />
+                <Owl position={position} cellSize={cellSize} offset={2 * cellMargin} />
             </ div>
         </div>
     )

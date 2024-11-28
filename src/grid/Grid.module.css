@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: url("https://bellroy-cms-images.imgix.net/897/background-texture-repeat.jpg");
 }
 
 .gridContainer {
