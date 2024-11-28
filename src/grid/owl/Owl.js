@@ -12,6 +12,7 @@ function Owl({ position, cellSize, offset }) {
             style={{
                 left: `${(x * cellSize) + xoffset + (cellSize / 2)}px`,
                 top: `${(y * cellSize) + yoffset + (cellSize / 2)}px`,
+                transition: 'left 0.2s ease, top 0.2s ease',
             }}>
             <Googlies position={position} />
             <img src={'./owl.png'} alt='Bellroy Owl' style={{
