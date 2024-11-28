@@ -7,7 +7,7 @@ function Grid() {
 
     const [columns, rows] = [5, 5];
     const cellSize = 96;
-    const [position, setPosition] = useState({ x: 3, y: 3, direction: 'neutral', facing: 'right' })
+    const [position, setPosition] = useState({ x: 2, y: 2, direction: 'neutral', facing: 'right' })
 
     useEffect(() => {
         const handleKeyDown = (event) => {
